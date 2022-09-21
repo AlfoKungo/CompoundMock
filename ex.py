@@ -36,17 +36,5 @@ def Lend(amount):
 
 
 def getBalance():
-    print(web3.eth.getBalance(walletid))
-
-
-
-##tx = {"to":'0x0ff50a12759b081bb657adacf712c52bb015f1cd',"data" = data, "value":5, "gas": 21000,"nonce":nonce, "gasPrice":w3.eth.gas_price}
-##
-###w3 = Web3(Web3.HTTPProvider('http://127.0.0.1:7545'))
-##getBalance()
-##stx = w3.eth.account.sign_transaction(tx, "0x571b827b759c3b27c9546271d72491fc01101bcabb4ff078fb39e0112f2086dd")
-###w3 = Web3(Web3.HTTPProvider('https://goerli.infura.io/v3/1b9b1909460946259ac640cb1edc300a'))
-##
-##web3.eth.send_raw_transaction(stx.rawTransaction)
-
-
+    balance = web3.eth.getBalance(walletid)
+    print("you have " + str(web3.fromWei(balance, 'ether')) + " ether")
